@@ -5,8 +5,6 @@ This is a sample project by using mediation Mopub include Ad-Network Vungle.
 This project may help to reproduce issues and narrow down the root cause.
 
 ## Getting Started
-- Download the Adapter
-    Due to Vungle SDK Adapter is not on maven, you have to download [the adapter](https://vungle2-cdn-prod.s3.amazonaws.com/sdks/android/early-access/mopub/mopub-vungle-adapter-6_5_0-early.aar) and copy to the project's libs folder.
 
 - Input your ad unit ids
 
