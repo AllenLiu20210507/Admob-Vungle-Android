@@ -1,5 +1,5 @@
 # Admob Android Mediation with Vungle SDK
-This is a sample project by using mediation Mopub include Ad-Network Vungle.
+This is a sample project by using mediation Admob include Ad-Network Vungle.
 
 ## Goal
 This project may help to reproduce issues and narrow down the root cause.
@@ -20,13 +20,10 @@ This project may help to reproduce issues and narrow down the root cause.
     </resources>
     ```
 
-## For more details, please check Mopub integration document
-https://developers.mopub.com/publishers/ios/integrate/
-
 ## Tested Version
 
 Admob: 
-5.10.0
+17.4.1
 
 Vungle + Adapter: 
 6.4.11 + 6.4.11.1
