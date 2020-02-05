@@ -23,7 +23,7 @@ This project may help to reproduce issues and narrow down the root cause.
 ## Tested Version
 
 Admob: 
-17.4.1
+7.53.1
 
 Vungle + Adapter: 
 6.4.11 + 6.4.11.1
