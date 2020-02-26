@@ -8,16 +8,15 @@ This project may help to reproduce issues and narrow down the root cause.
 
 - Input your ad unit ids
 
-    Create a file adunits.xml under the folder inlucde the content below with your Admob ids:
+    Add your Admob ids in String.xml:
 
     ```
-    <resources>
-    <string name="ad_unit_id">Your_ad_unit_id</string>
+    <string name="app_name">AdmobVungle</string>
+    <string name="app_id">Your_app_id</string>
     <string name="interstitial_placement_id">Your_interstitial_placement_id</string>
     <string name="reward_placement_id">Your_reward_placement_id</string>
     <string name="mrec_placement_id">Your_mrec_placement_id</string>
     <string name="banner_placement_id">Your_banner_placement_id</string>
-    </resources>
     ```
 
 ## Tested Version
