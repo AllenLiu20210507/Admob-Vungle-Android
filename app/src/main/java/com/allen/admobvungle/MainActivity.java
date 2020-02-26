@@ -24,8 +24,8 @@ public class MainActivity extends Activity {
 
     private RewardedVideoAd mRewardedVideoAd;
     private InterstitialAd mInterstitialAd;
-    private static final String mAdUnitIdRewardBased = "";
-    private static final String mAdUnitIdInterstitial = "";
+    private static  String mAdUnitIdRewardBased = "";
+    private static  String mAdUnitIdInterstitial = "";
 
 
     private Button showRewardedVideoAdButton;
@@ -38,6 +38,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAdUnitIdRewardBased=getString(R.string.reward_placement_id);
+        mAdUnitIdInterstitial=getString(R.string.interstitial_placement_id);
         //init components
         showRewardedVideoAdButton = ((Button) this.findViewById(R.id.show));
         showInterstitialAdButton = ((Button) this.findViewById(R.id.showInterstitial));
