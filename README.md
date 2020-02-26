@@ -19,7 +19,7 @@ This project may help to reproduce issues and narrow down the root cause.
     <string name="banner_placement_id">Your_banner_placement_id</string>
     ```
 ## Tips:
-- Due to the 6.5.2 adapter is not released yet from Admob,you need to download the admob-vungle-adapters-6.5.2.0.aar form [here.(https://support.vungle.com/hc/en-us/articles/360027517832-Early-Access-Integrating-AdMob-Vungle-SDK-v-6-5-2-Android-)]
+- Due to the 6.5.2 adapter is not released yet from Admob,you need to download the admob-vungle-adapters-6.5.2.0.aar form [https://support.vungle.com/hc/en-us/articles/360027517832-Early-Access-Integrating-AdMob-Vungle-SDK-v-6-5-2-Android-]
 
 ## Tested Version
 
