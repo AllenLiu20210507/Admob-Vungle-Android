@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
-                log(initializationStatus.toString() + "初始化成功");
+                log(initializationStatus.toString() + "init successfully");
             }
         });
     }
