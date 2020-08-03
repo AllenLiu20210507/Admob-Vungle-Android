@@ -31,18 +31,14 @@ dependencies {
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'com.google.android.gms:play-services-ads:18.3.0'
-    // Vungle SDK
-    implementation 'com.vungle:publisher-sdk-android:6.5.2'
+    implementation 'com.google.android.gms:play-services-ads:19.3.0'
+    implementation 'com.google.ads.mediation:vungle:6.7.0.0'
     //Vungle Adapter
-    implementation files('libs/admob-vungle-adapters-6.5.2.0.aar')
 
-    // Either appcompat-v7 or support-v4 is need for SDK operation
-    implementation 'com.android.support:appcompat-v7:28.0.0'  // Either
-    implementation 'com.android.support:support-v4:27.1.1'    // Or
+
 
     // Recommended for SDK to be able to get Android Advertising ID
-    implementation 'com.google.android.gms:play-services-basement:17.1.1'
+    implementation 'com.google.android.gms:play-services-basement:17.3.0'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
 
     implementation 'com.android.support:multidex:1.0.3'
