@@ -98,6 +98,8 @@ public class MainActivity extends Activity {
 
         //init MobileAds
        MobileAds.initialize(MainActivity.this);
+
+//        MediationTestSuite.launch(MainActivity.this);
     }
 
 
@@ -105,7 +107,7 @@ public class MainActivity extends Activity {
 
     public void loadRewardedVideo(View view) {
 
-        mRewardedVideoAd.loadAd(mAdUnitIdRewardBased, new AdRequest.Builder().build());
+        mRewardedVideoAd.loadAd(mAdUnitIdRewardBased, new AdRequest.Builder().addTestDevice("6A771E54DF8B42314F02EE15E821BC18").build());
     }
 
     public void showRewardedVideo(View view) {
