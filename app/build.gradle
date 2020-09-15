@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.admob_vungle_sample"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -30,15 +30,15 @@ dependencies {
 //    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'com.google.android.gms:play-services-ads:19.3.0'
-    implementation 'com.google.ads.mediation:vungle:6.7.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.gms:play-services-ads:19.4.0'
+    implementation 'com.google.ads.mediation:vungle:6.7.1.0'
     //Vungle Adapter
 
 
 
     // Recommended for SDK to be able to get Android Advertising ID
-    implementation 'com.google.android.gms:play-services-basement:17.3.0'
+    implementation 'com.google.android.gms:play-services-basement:17.4.0'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
 
     implementation 'com.android.support:multidex:1.0.3'
