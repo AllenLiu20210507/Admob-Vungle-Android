@@ -5,7 +5,7 @@ This is a sample project by using mediation Admob include Ad-Network Vungle.
 This project may help to reproduce issues and narrow down the root cause.
 
 ## Getting Started
-
+- Download the project and open it in Android studio
 - Input your ad unit ids
 
     Add your Admob ids in String.xml:
