@@ -1,6 +1,7 @@
 package com.allen.admobvungle;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,7 +32,6 @@ public class MainActivity extends Activity {
     private Button showRewardedVideoAdButton;
     private Button showInterstitialAdButton;
 
-    private AdView mAdView;
 
 
     @Override
@@ -43,7 +43,6 @@ public class MainActivity extends Activity {
         //init components
         showRewardedVideoAdButton = ((Button) this.findViewById(R.id.show));
         showInterstitialAdButton = ((Button) this.findViewById(R.id.showInterstitial));
-        mAdView = findViewById(R.id.adView);
 
         //RewardedVideoAd init
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
@@ -55,47 +54,7 @@ public class MainActivity extends Activity {
         mInterstitialAd.setAdListener(mAdListener);
 
 
-        //Banner init
-        mAdView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-                log("onAdLoaded");
-            }
 
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
-                log("onAdFailedToLoad"+"   errorCode"+errorCode);
-
-            }
-
-            @Override
-            public void onAdOpened() {
-                // Code to be executed when an ad opens an overlay that
-                // covers the screen.
-            }
-
-            @Override
-            public void onAdClicked() {
-                log("onAdClicked");
-
-                // Code to be executed when the user clicks on an ad.
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
-            }
-
-            @Override
-            public void onAdClosed() {
-                // Code to be executed when the user is about to return
-                // to the app after tapping on an ad.
-                log("onAdClosed");
-
-            }
-        });
 
         //init MobileAds
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -129,10 +88,9 @@ public class MainActivity extends Activity {
         mInterstitialAd.show();
     }
 
-    public void loadBanner(View view) {
-//        AdSize adSize=new AdSize(300,50);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("8B4CFB7EDE2B10EF62C16A83B4B20987").build();
-        mAdView.loadAd(adRequest);
+    public void goToBannerAndMrec(View view) {
+        Intent intent=new Intent(MainActivity.this,BannerActivity.class);
+        startActivity(intent);
     }
 
 

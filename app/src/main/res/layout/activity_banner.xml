@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+
+    >
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Banner"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/loadBanner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView1"
+        android:layout_centerHorizontal="true"
+        android:onClick="loadBanner"
+        android:text="ad_load" />
+
+
+
+
+
+<!--   ads:adSize="BANNER"   -->
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView1"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_placement_id"></com.google.android.gms.ads.AdView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="MREC"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/loadMrec"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView1"
+        android:layout_centerHorizontal="true"
+        android:onClick="loadMREC"
+        android:text="ad_load" />
+
+
+
+
+
+    <!--   ads:adSize="BANNER" please refer to https://developers.google.com/admob/android/banner to know the adsize which supported by admob -->
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="MEDIUM_RECTANGLE"
+        ads:adUnitId="@string/mrec_placement_id"></com.google.android.gms.ads.AdView>
+
+
+
+
+</LinearLayout>
