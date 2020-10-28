@@ -151,6 +151,9 @@ public class AppOpenManager implements Application.ActivityLifecycleCallbacks, L
                             AppOpenManager.this.appOpenAd = null;
                             isShowingAd = false;
                             fetchAd();
+                            if (firstStartListner != null) {
+                                firstStartListner.onAppFirstClosed();
+                            }
                         }
 
                         @Override

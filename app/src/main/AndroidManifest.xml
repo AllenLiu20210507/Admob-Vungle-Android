@@ -14,14 +14,16 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/app_id"/>
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".BannerActivity"></activity>
+        <activity android:name=".application.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BannerActivity"></activity>
-        
     </application>
 
 </manifest>

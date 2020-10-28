@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 
 import com.allen.admobvungle.MainActivity;
+import com.allen.admobvungle.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -17,22 +18,30 @@ public class WelcomeActivity extends Activity  {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_welcome);
         appOpenManager=AppOpenManager.getAppOpenManager(this);
         appOpenManager.setFirstStartListner(firstStartListner);
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                Intent intent=new Intent(WelcomeActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        },5000,0);
+
     }
 
- public FirstStartListner firstStartListner=new FirstStartListner() {
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    public FirstStartListner firstStartListner=new FirstStartListner() {
       @Override
       public void onAppFisrtAdLoaded() {
          appOpenManager.showAdIfAvailable(WelcomeActivity.this);
       }
-  };
+
+     @Override
+     public void onAppFirstClosed() {
+         Intent intent=new Intent(WelcomeActivity.this, MainActivity.class);
+         startActivity(intent);
+         finish();
+
+     }
+ };
 }
