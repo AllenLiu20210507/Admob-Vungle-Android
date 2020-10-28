@@ -8,13 +8,15 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import com.allen.admobvungle.application.AppOpenManager;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 public class BannerActivity extends Activity {
     private AdView mAdViewBanner,mAdViewMrec;
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG ="allen"+ BannerActivity.class.getSimpleName();
+
 
 
     @Override
