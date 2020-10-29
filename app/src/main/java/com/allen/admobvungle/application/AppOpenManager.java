@@ -93,7 +93,7 @@ public class AppOpenManager implements Application.ActivityLifecycleCallbacks, L
                     @Override
                     public void onAppOpenAdLoaded(AppOpenAd ad) {
                         AppOpenManager.this.appOpenAd = ad;
-                        if (firstStartListner != null) {
+                        if (firstStartListner != null&&isColdLaunch) {
                             firstStartListner.onAppFisrtAdLoaded();
                         }
                     }
@@ -140,14 +140,15 @@ public class AppOpenManager implements Application.ActivityLifecycleCallbacks, L
     public void showAdIfAvailable(Activity currentactivity) {
         // Only show ad if there is not already an app open ad currently showing
         // and an ad is available.
+        log("isShowingAd"+isShowingAd+"isAdAvailable"+isAdAvailable());
         if (!isShowingAd && isAdAvailable()) {
-            Log.d(LOG_TAG, "Will show ad.");
 
             FullScreenContentCallback fullScreenContentCallback =
                     new FullScreenContentCallback() {
                         @Override
                         public void onAdDismissedFullScreenContent() {
                             // Set the reference to null so isAdAvailable() returns false.
+                            log("onAdDismissedFullScreenContent");
                             AppOpenManager.this.appOpenAd = null;
                             isShowingAd = false;
                             fetchAd();
@@ -193,12 +194,15 @@ public class AppOpenManager implements Application.ActivityLifecycleCallbacks, L
     public void onActivityStarted(@NonNull Activity activity) {
         mFinalCount++;
         //如果mFinalCount ==1，说明冷启动，第一次打开activity
+        log("onActivityStarted" + activity.toString()+"mFinalCount"+mFinalCount);
         if (mFinalCount == 1) {
-            Log.e("ColdApplication", "---------ColdApplication----ColdActivityLifecycleCallbacks");
-           isColdLaunch = true;
+            isColdLaunch=true;
+        }else{
+            isColdLaunch=false;
+            showAdIfAvailable(activity);
         }
         log("onActivityStarted" + activity.toString());
-        showAdIfAvailable(activity);
+
     }
 
     @Override
@@ -233,6 +237,6 @@ public class AppOpenManager implements Application.ActivityLifecycleCallbacks, L
     @OnLifecycleEvent(ON_START)
     public void onStart() {
 //        showAdIfAvailable();
-        log("onStart");
+//        log("onStart");
     }
 }

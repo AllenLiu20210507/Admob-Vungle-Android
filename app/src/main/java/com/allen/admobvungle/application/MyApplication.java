@@ -23,4 +23,5 @@ public class MyApplication extends Application {
         appOpenManager=AppOpenManager.getAppOpenManager(this);
         appOpenManager.fetchAd();
     }
+
 }
