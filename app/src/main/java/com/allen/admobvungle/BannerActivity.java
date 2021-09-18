@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
+
+import org.jetbrains.annotations.NotNull;
 
 public class BannerActivity extends Activity {
     private AdView mAdViewBanner,mAdViewMrec;
@@ -33,13 +37,6 @@ public class BannerActivity extends Activity {
             }
 
             @Override
-            public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
-                log("onAdFailedToLoad"+"   errorCode"+errorCode);
-
-            }
-
-            @Override
             public void onAdOpened() {
                 // Code to be executed when an ad opens an overlay that
                 // covers the screen.
@@ -53,8 +50,10 @@ public class BannerActivity extends Activity {
             }
 
             @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
+            public void onAdImpression() {
+                super.onAdImpression();
+                log("onAdImpression");
+
             }
 
             @Override
@@ -62,6 +61,13 @@ public class BannerActivity extends Activity {
                 // Code to be executed when the user is about to return
                 // to the app after tapping on an ad.
                 log("onAdClosed");
+
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull @NotNull LoadAdError loadAdError) {
+                super.onAdFailedToLoad(loadAdError);
+                log("loadAdError"+loadAdError);
 
             }
         });
@@ -76,9 +82,9 @@ public class BannerActivity extends Activity {
             }
 
             @Override
-            public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
-                log("onAdFailedToLoad"+"   errorCode"+errorCode);
+            public void onAdFailedToLoad(@NonNull @NotNull LoadAdError loadAdError) {
+                super.onAdFailedToLoad(loadAdError);
+                log("loadAdError"+loadAdError);
 
             }
 
@@ -96,8 +102,10 @@ public class BannerActivity extends Activity {
             }
 
             @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
+            public void onAdImpression() {
+                super.onAdImpression();
+                log("onAdImpression");
+
             }
 
             @Override
@@ -113,6 +121,7 @@ public class BannerActivity extends Activity {
 
     public void loadBanner(View view) {
         AdRequest adRequest = new AdRequest.Builder().build();
+//        RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("6A771E54DF8B42314F02EE15E821BC18")
         mAdViewBanner.loadAd(adRequest);
     }
     public void loadMREC(View view) {
