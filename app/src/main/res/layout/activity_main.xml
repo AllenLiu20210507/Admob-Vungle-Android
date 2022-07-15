@@ -41,7 +41,6 @@
         android:layout_below="@id/load"
         android:layout_centerHorizontal="true"
         android:onClick="showRewardedVideo"
-        android:enabled="false"
         android:text="ad_show" />
 
     <TextView
@@ -70,7 +69,6 @@
         android:layout_below="@id/loadInterstitial"
         android:layout_centerHorizontal="true"
         android:onClick="showInterstitial"
-        android:enabled="false"
         android:text="ad_show" />
 
 

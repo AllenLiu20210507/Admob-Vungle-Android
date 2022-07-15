@@ -14,7 +14,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 
-import org.jetbrains.annotations.NotNull;
 
 public class BannerActivity extends Activity {
     private AdView mAdViewBanner,mAdViewMrec;
@@ -65,7 +64,7 @@ public class BannerActivity extends Activity {
             }
 
             @Override
-            public void onAdFailedToLoad(@NonNull @NotNull LoadAdError loadAdError) {
+            public void onAdFailedToLoad(@NonNull  LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
                 log("loadAdError"+loadAdError);
 
@@ -82,7 +81,7 @@ public class BannerActivity extends Activity {
             }
 
             @Override
-            public void onAdFailedToLoad(@NonNull @NotNull LoadAdError loadAdError) {
+            public void onAdFailedToLoad(@NonNull  LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
                 log("loadAdError"+loadAdError);
 

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.admob_vungle_sample"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -18,8 +18,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    //指定jdk版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
 
-}
+    }
+    }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -33,7 +38,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
     implementation 'com.google.android.gms:play-services-ads:20.3.0'
-    implementation 'com.google.ads.mediation:vungle:6.10.2.0'
+    implementation 'com.google.ads.mediation:vungle:6.11.0.2'
+    implementation 'com.google.android.ads:mediation-test-suite:2.0.0'
+
 
     //Vungle Adapter
 
