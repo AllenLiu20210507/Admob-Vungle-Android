@@ -8,17 +8,20 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.google.ads.mediation.vungle.VungleInitializer;
 import com.google.ads.mediation.vungle.VungleMediationAdapter;
 import com.google.android.ads.mediationtestsuite.MediationTestSuite;
 import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdInspectorError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.OnAdInspectorClosedListener;
 import com.google.android.gms.ads.OnUserEarnedRewardListener;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -30,6 +33,7 @@ import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import java.util.Arrays;
+import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -70,15 +74,27 @@ public class MainActivity extends Activity {
 
 
 
-        MediationTestSuite.launch(MainActivity.this);
+//        MediationTestSuite.launch(MainActivity.this);
 
+//        List<String> testDeviceIds = Arrays.asList("703C72FC69187B50A393DB0093D011E4");
+//        RequestConfiguration configuration =
+//                new RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build();
+//        MobileAds.setRequestConfiguration(configuration);
 
 
         //init MobileAds
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
-                log(initializationStatus.toString() + "init successfully");
+                log(TAG + "init successfully");
+//                MobileAds.openAdInspector(
+//                        MainActivity.this,
+//                        new OnAdInspectorClosedListener() {
+//                            public void onAdInspectorClosed(@Nullable AdInspectorError error) {
+//                                // Error will be non-null if ad inspector closed due to an error.
+//                                Log.e("AdInspector", "Failed: " + error.getMessage());
+//                            }
+//                        });
             }
         });
 
@@ -223,6 +239,11 @@ public class MainActivity extends Activity {
 
     public void goToBannerAndMrec(View view) {
         Intent intent=new Intent(MainActivity.this,BannerActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToNativeAd(View view) {
+        Intent intent = new Intent(MainActivity.this, NativeAdActivity.class);
         startActivity(intent);
     }
 

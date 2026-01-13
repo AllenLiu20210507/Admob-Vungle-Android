@@ -80,4 +80,13 @@
         android:onClick="goToBannerAndMrec"
         android:layout_marginTop="50dp"
         android:text="goTo Banner_Mrec" />
+
+    <Button
+        android:id="@+id/goToNativeAd"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:onClick="goToNativeAd"
+        android:layout_marginTop="16dp"
+        android:text="goTo Native Ad" />
 </LinearLayout>

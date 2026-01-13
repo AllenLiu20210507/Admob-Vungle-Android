@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">AdmobVungle</string>
-    <string name="app_id">ca-app-pub-3201312724662778~3863124127</string>
+    <string name="app_id">ca-app-pub-7965796123753676~6385648864</string>
     <string name="interstitial_placement_id"></string>
     <string name="reward_placement_id"></string>
     <string name="mrec_placement_id">Your_mrec_placement_id</string>
     <string name="banner_placement_id"></string>
+    <string name="native_ad_unit_id">ca-app-pub-7965796123753676/2885529115</string>
 </resources>

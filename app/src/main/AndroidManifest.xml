@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".BannerActivity"></activity>
+        <activity android:name=".NativeAdActivity"></activity>
     </application>
 
 </manifest>
